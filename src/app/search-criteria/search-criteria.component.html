@@ -1,0 +1,12 @@
+<form #searchForm="ngForm" (ngSubmit)="doSearch()">
+    <label for=" ">looking for</label>
+    <input placeholder="searching for" type="text " required />
+    <label for=" " [hidden]="dietaryRestrictionHidden">Dietary Restriction</label>
+    <select name=" " id=" " [hidden]="dietaryRestrictionHidden">
+    <option value=" "></option>
+    <option value=" "></option>
+    <option value=" "></option>
+    <option value=" "></option>
+  </select>
+    <input type="submit" routerLink="//results" />
+</form>

@@ -1,0 +1,8 @@
+<article *ngFor="let recipe of recipeList">
+  <h3>{{ recipe.recipe.label }}</h3>
+  <ol>
+    <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+      {{ ingredient }}
+    </li>
+  </ol>
+</article>
