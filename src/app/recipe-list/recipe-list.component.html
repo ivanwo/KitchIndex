@@ -4,13 +4,29 @@
   (messageEvent)="receiveEvent($event)"
 ></app-search-criteria>
 
-<article *ngFor="let recipe of recipeList">
-  <h3>{{ recipe.recipe.label }}</h3>
-
+<article class="resultDisplayed" *ngFor="let recipe of recipeList">
   <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-  <ol>
-    <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
-      {{ ingredient }}
-    </li>
-  </ol>
+  <a href="{{ recipe.recipe.url }}"
+    >Click here for step by step recipe instructions.</a
+  >
+  <i
+    (click)="
+      addFavs(
+        recipe.recipe.title,
+        recipe.recipe.image,
+        recipe.recipe.source,
+        recipe.recipe.imageLink,
+        recipe.recipe.ingredientLines
+      )
+    "
+  ></i>
+  <h2 class="recipeSource"></h2>
+  <div>
+    <h3>{{ recipe.recipe.label }}</h3>
+    <ol>
+      <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+        {{ ingredient }}
+      </li>
+    </ol>
+  </div>
 </article>
