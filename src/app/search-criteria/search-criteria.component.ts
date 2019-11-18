@@ -8,14 +8,18 @@ import { RecipeService } from "../services/recipe.service";
 })
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
-  dietaryRestrictionHidden: boolean = true;
-  caloriesHidden: boolean = true;
+  dietaryRestrictionHidden: boolean = false;
+  caloriesHidden: boolean = false;
 
   @Output() messageEvent = new EventEmitter<any>();
 
-  doSearch(topic: string, calories: number) {
+  doSearch(topic: string, calories: number, dietary: string) {
     if (calories === 1000) calories *= 10;
-    this.recipeService.getRecipes(topic, calories).subscribe(data => {
+    // if the dietary restriction and calories are hidden, then the
+    if (this.caloriesHidden) calories = 10000;
+    // wha
+    if (dietary === undefined) dietary = "";
+    this.recipeService.getRecipes(topic, calories, dietary).subscribe(data => {
       this.messageEvent.emit(data.hits);
     });
   }

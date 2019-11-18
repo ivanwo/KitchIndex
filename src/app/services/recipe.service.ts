@@ -13,15 +13,32 @@ export class RecipeService {
   recipeList: any[];
   favList: any[] = [];
 
-  getRecipes(topic: string, calories: number): Observable<any> {
-    return this.http.get("https://api.edamam.com/search", {
-      params: {
-        app_id: APP_ID,
-        app_key: APP_KEY,
-        calories: `0-${calories}`,
-        q: topic
-      }
-    });
+  getRecipes(
+    topic: string,
+    calories: number,
+    dietary: string
+  ): Observable<any> {
+    if (dietary === "")
+      return this.http.get("https://api.edamam.com/search", {
+        params: {
+          app_id: APP_ID,
+          app_key: APP_KEY,
+          calories: `0-${calories}`,
+          to: "10",
+          q: topic
+        }
+      });
+    else
+      return this.http.get("https://api.edamam.com/search", {
+        params: {
+          app_id: APP_ID,
+          app_key: APP_KEY,
+          calories: `0-${calories}`,
+          to: "10",
+          diet: dietary,
+          q: topic
+        }
+      });
   }
   getFavList(): any[] {
     return this.favList;

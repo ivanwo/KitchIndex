@@ -1,0 +1,83 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue;
+}
+.dietaryDiv {
+  display: flex;
+  flex-direction: column;
+}
+.dietaryDiv label {
+  float: left;
+}
+.dietaryDiv label input {
+  margin-left: 5em;
+}
+input[type="checkbox"] {
+  float: right;
+  height: 15px;
+  width: 15px;
+  background-color: #4caf50;
+  cursor: pointer;
+  user-select: none;
+}
+input[type="checkbox"]:checked {
+  background-color: #4caf50;
+}
+.togglers {
+  display: flex;
+  justify-content: space-evenly;
+  width: 250px;
+}
+input[type="submit"],
+button {
+  outline: none;
+  opacity: 0.7;
+  transition: 0.5s;
+  border: none;
+  background-color: #4caf50;
+}
+input[type="submit"]:hover,
+button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  background: #d3d3d3;
+  width: 200px;
+  height: 15px;
+  margin: 0.5em 0;
+
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+input[type="range"]::before {
+  color: black;
+  /* background-color: white; */
+  /* background-size: 25px auto; */
+  content: "100";
+
+  border-right: 2px solid white;
+  line-height: 2px;
+  /* transform: translateX(-25px); */
+}
+input[type="range"]::after {
+  color: black;
+  border-left: 4px solid white;
+  content: "1000+";
+}
+
+input[type="range"]:hover {
+  opacity: 1;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 20px;
+  background: #4caf50;
+  cursor: pointer;
+}
