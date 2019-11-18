@@ -11,7 +11,6 @@ const routes: Routes = [
   { path: "", redirectTo: "/index", pathMatch: "full" },
   { path: "**", redirectTo: "index" }
 ];
-git;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

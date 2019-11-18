@@ -1,4 +1,18 @@
+.resultDisplayed {
+  width: 75vh;
+  height: auto;
+  /* display: flex;
+  flex-direction: row; */
+}
+
 .foodImg {
-  width: 100px;
-  height: 100px;
+  flex-grow: 2;
+}
+.heartIcon {
+  font-size: 20px;
+  color: red;
+}
+
+.blue {
+  color: blue;
 }

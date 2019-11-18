@@ -11,9 +11,25 @@ export class RecipeListComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
   recipeList: any[];
-
+  clickedHeart: boolean;
+  favList: any[];
   receiveEvent(newRecipeList) {
     this.recipeList = newRecipeList;
+  }
+
+  toggleHeartIcon(): void {
+    this.clickedHeart = !this.clickedHeart;
+  }
+
+  addFavs(
+    title: string,
+    image: string,
+    source: string,
+    imageLink: string,
+    ingredientsLines: any[]
+  ): any {
+    this.favList = this.recipeService.getFavList();
+    this.favList.push({ title, image, source, imageLink, ingredientsLines });
   }
 
   ngOnInit() {
