@@ -1,6 +1,14 @@
-<article>
-    <header>favorite food</header>
-    <ol>
-        <li *ngFor="let favorite of favList"></li>
-    </ol>
+<article *ngFor="let recipe of favList">
+  <img class="foodImg" src="{{ recipe.image }}" alt="" />
+  <a href="{{ recipe.url }}"
+    >Click here for step by step recipe instructions.</a
+  >
+  <!-- <div> -->
+  <h3>{{ recipe.label }}</h3>
+  <!-- <ol>
+    <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+      {{ ingredient }}
+    </li>
+  </ol> -->
+  <!-- </div> -->
 </article>
