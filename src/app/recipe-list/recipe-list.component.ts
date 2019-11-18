@@ -9,10 +9,11 @@ import { SearchCriteriaComponent } from "../search-criteria/search-criteria.comp
 })
 export class RecipeListComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
-
+  ingredientLines: any[];
   recipeList: any[];
   clickedHeart: boolean;
   favList: any[];
+
   receiveEvent(newRecipeList) {
     this.recipeList = newRecipeList;
   }
@@ -21,17 +22,18 @@ export class RecipeListComponent implements OnInit {
     this.clickedHeart = !this.clickedHeart;
   }
 
-  addFavs(
-    title: string,
-    image: string,
-    source: string,
-    imageLink: string,
-    ingredientsLines: any[]
-  ): any {
-    this.favList = this.recipeService.getFavList();
-    // console.log(typeof this.favList);
-    this.favList.push({ title, image, source, imageLink, ingredientsLines });
-    this.recipeService.setFavList(this.favList);
+  addFavs(favorite) {
+    //   title: string,
+    //   image: string,
+    //   // source: string,
+
+    //   ingredientLines: string[]
+    // ): any {
+    //   this.favList = this.recipeService.getFavList();
+    //   // console.log(typeof this.favList);
+    //   this.favList.push({ title, image, ingredientLines });
+    //   this.recipeService.setFavList(this.favList);
+    this.recipeService.setFavList(favorite);
   }
 
   ngOnInit() {

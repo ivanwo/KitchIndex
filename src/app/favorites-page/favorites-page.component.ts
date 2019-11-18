@@ -11,7 +11,9 @@ export class FavoritesPageComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   favList: any[];
   favRecipe: Recipe;
+
   ngOnInit() {
     this.favList = this.recipeService.getFavList();
+    console.log(this.favList);
   }
 }

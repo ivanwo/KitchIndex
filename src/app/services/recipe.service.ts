@@ -43,7 +43,7 @@ export class RecipeService {
   getFavList(): any[] {
     return this.favList;
   }
-  setFavList(localFavs): any {
-    this.favList = localFavs;
+  setFavList(favorite): any {
+    this.favList.push(favorite);
   }
 }
