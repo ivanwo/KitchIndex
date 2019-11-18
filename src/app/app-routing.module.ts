@@ -5,11 +5,11 @@ import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { FavoritesPageComponent } from "./favorites-page/favorites-page.component";
 
 const routes: Routes = [
-  { path: "search", component: SearchCriteriaComponent },
-  { path: "results", component: RecipeListComponent },
+  // { path: "search", component: SearchCriteriaComponent },
+  { path: "index", component: RecipeListComponent },
   { path: "favs", component: FavoritesPageComponent },
-  { path: "", redirectTo: "/search", pathMatch: "full" },
-  { path: "**", redirectTo: "search" }
+  { path: "", redirectTo: "/index", pathMatch: "full" },
+  { path: "**", redirectTo: "index" }
 ];
 
 @NgModule({
