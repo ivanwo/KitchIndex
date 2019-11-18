@@ -10,12 +10,13 @@
     >Click here for step by step recipe instructions.</a
   >
   <i
+    class="fas fa-heart blue"
     (click)="
       addFavs(
-        recipe.recipe.title,
+        recipe.recipe.label,
         recipe.recipe.image,
         recipe.recipe.source,
-        recipe.recipe.imageLink,
+        recipe.recipe.url,
         recipe.recipe.ingredientLines
       )
     "

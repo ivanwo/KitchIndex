@@ -29,7 +29,9 @@ export class RecipeListComponent implements OnInit {
     ingredientsLines: any[]
   ): any {
     this.favList = this.recipeService.getFavList();
+    // console.log(typeof this.favList);
     this.favList.push({ title, image, source, imageLink, ingredientsLines });
+    this.recipeService.setFavList(this.favList);
   }
 
   ngOnInit() {

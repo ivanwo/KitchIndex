@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "../services/recipe.service";
+import { Recipe } from "../recipe";
 
 @Component({
   selector: "app-favorites-page",
@@ -9,7 +10,7 @@ import { RecipeService } from "../services/recipe.service";
 export class FavoritesPageComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   favList: any[];
-
+  favRecipe: Recipe;
   ngOnInit() {
     this.favList = this.recipeService.getFavList();
   }
