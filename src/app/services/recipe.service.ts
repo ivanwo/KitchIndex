@@ -13,11 +13,12 @@ export class RecipeService {
   recipeList: any[];
   refreshList: boolean = false;
 
-  getRecipes(topic: string): Observable<any> {
+  getRecipes(topic: string, calories: number): Observable<any> {
     return this.http.get("https://api.edamam.com/search", {
       params: {
         app_id: APP_ID,
         app_key: APP_KEY,
+        calories: `0-${calories}`,
         q: topic
       }
     });

@@ -13,8 +13,9 @@ export class SearchCriteriaComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter<any>();
 
-  doSearch(topic: string) {
-    this.recipeService.getRecipes(topic).subscribe(data => {
+  doSearch(topic: string, calories: number) {
+    if (calories === 1000) calories *= 10;
+    this.recipeService.getRecipes(topic, calories).subscribe(data => {
       this.messageEvent.emit(data.hits);
     });
   }

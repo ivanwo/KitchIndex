@@ -1,4 +1,7 @@
-<form #searchForm="ngForm" (ngSubmit)="doSearch(searchForm.value.search)">
+<form
+  #searchForm="ngForm"
+  (ngSubmit)="doSearch(searchForm.value.search, searchForm.value.calories)"
+>
   <label for="search">looking for</label>
   <input
     placeholder="i.e. chicken"
@@ -15,5 +18,17 @@
     <option value=" "></option>
     <option value=" "></option>
   </select>
+  <label for="calories">
+    max calories, 100 - 1000+
+    <input
+      type="range"
+      min="100"
+      max="1000"
+      name="calories"
+      id="calories"
+      class="calories"
+      ngModel
+    />
+  </label>
   <input type="submit" routerLink="//results" />
 </form>
