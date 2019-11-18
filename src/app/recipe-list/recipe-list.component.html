@@ -6,6 +6,8 @@
 
 <article *ngFor="let recipe of recipeList">
   <h3>{{ recipe.recipe.label }}</h3>
+
+  <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
   <ol>
     <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
       {{ ingredient }}

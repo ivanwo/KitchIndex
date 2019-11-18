@@ -1,34 +1,52 @@
 <form
   #searchForm="ngForm"
-  (ngSubmit)="doSearch(searchForm.value.search, searchForm.value.calories)"
+  (ngSubmit)="
+    doSearch(
+      searchForm.value.search,
+      searchForm.value.calories,
+      searchForm.value.dietary
+    )
+  "
 >
-  <label for="search">looking for</label>
-  <input
-    placeholder="i.e. chicken"
-    type="text "
-    name="search"
-    id="search"
-    ngModel
-    required
-  />
-  <label for=" " [hidden]="dietaryRestrictionHidden">Dietary Restriction</label>
-  <select name=" " id=" " [hidden]="dietaryRestrictionHidden">
-    <option value=" "></option>
-    <option value=" "></option>
-    <option value=" "></option>
-    <option value=" "></option>
-  </select>
-  <label for="calories">
-    max calories, 100 - 1000+
+  <label for="search">
+    looking for
     <input
-      type="range"
-      min="100"
-      max="1000"
-      name="calories"
-      id="calories"
-      class="calories"
+      placeholder="i.e. chicken"
+      type="text "
+      name="search"
+      id="search"
       ngModel
+      required
     />
+    <input name="submit" class="submit" type="submit" />
   </label>
-  <input type="submit" routerLink="//results" />
+  <div class="togglers">
+    <button (click)="toggleCalories()">calories</button>
+    <button (click)="toggleDietary()">dietary restriction</button>
+  </div>
+
+  <label for="dietary" [hidden]="dietaryRestrictionHidden">
+    <select name="dietary" id="dietary" ngModel>
+      <option value="">Dietary Restriction</option>
+      <option value="low-carb">low carb</option>
+      <!-- <option value="low-sodium">low sodium</option> -->
+      <option value="high-protein">high protein</option>
+      <!-- <option value="high-fiber">high fiber</option> -->
+      <option value="low-fat">low fat</option>
+    </select>
+  </label>
+
+  <label for="calories" [hidden]="caloriesHidden">
+    max calories
+  </label>
+  <input
+    [hidden]="caloriesHidden"
+    type="range"
+    min="100"
+    max="1000"
+    name="calories"
+    id="calories"
+    class="calories"
+    ngModel
+  />
 </form>
