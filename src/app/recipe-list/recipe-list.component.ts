@@ -12,9 +12,13 @@ export class RecipeListComponent implements OnInit {
 
   recipeList: any[];
 
+  receiveEvent(newRecipeList) {
+    this.recipeList = newRecipeList;
+  }
+
   ngOnInit() {
     this.recipeService
-      .getRecipes()
+      .getRecipes("chicken")
       .subscribe(data => (this.recipeList = data.hits));
     // console.log(typeof this.recipeList);
   }
