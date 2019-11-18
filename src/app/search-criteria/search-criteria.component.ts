@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { RecipeService } from "../services/recipe.service";
 
 @Component({
@@ -10,8 +10,14 @@ export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   dietaryRestrictionHidden: boolean = true;
   caloriesHidden: boolean = true;
-  doSearch() {
-    alert("SEARCH!");
+
+  @Output() messageEvent = new EventEmitter<any>();
+
+  doSearch(topic: string, calories: number) {
+    if (calories === 1000) calories *= 10;
+    this.recipeService.getRecipes(topic, calories).subscribe(data => {
+      this.messageEvent.emit(data.hits);
+    });
   }
   toggleCalories() {
     this.caloriesHidden = !this.caloriesHidden;

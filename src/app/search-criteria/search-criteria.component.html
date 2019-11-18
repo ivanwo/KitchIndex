@@ -1,12 +1,34 @@
-<form #searchForm="ngForm" (ngSubmit)="doSearch()">
-    <label for=" ">looking for</label>
-    <input placeholder="searching for" type="text " required />
-    <label for=" " [hidden]="dietaryRestrictionHidden">Dietary Restriction</label>
-    <select name=" " id=" " [hidden]="dietaryRestrictionHidden">
+<form
+  #searchForm="ngForm"
+  (ngSubmit)="doSearch(searchForm.value.search, searchForm.value.calories)"
+>
+  <label for="search">looking for</label>
+  <input
+    placeholder="i.e. chicken"
+    type="text "
+    name="search"
+    id="search"
+    ngModel
+    required
+  />
+  <label for=" " [hidden]="dietaryRestrictionHidden">Dietary Restriction</label>
+  <select name=" " id=" " [hidden]="dietaryRestrictionHidden">
     <option value=" "></option>
     <option value=" "></option>
     <option value=" "></option>
     <option value=" "></option>
   </select>
-    <input type="submit" routerLink="//results" />
+  <label for="calories">
+    max calories, 100 - 1000+
+    <input
+      type="range"
+      min="100"
+      max="1000"
+      name="calories"
+      id="calories"
+      class="calories"
+      ngModel
+    />
+  </label>
+  <input type="submit" routerLink="//results" />
 </form>

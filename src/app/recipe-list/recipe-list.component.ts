@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "../services/recipe.service";
+import { SearchCriteriaComponent } from "../search-criteria/search-criteria.component";
 
 @Component({
   selector: "app-recipe-list",
@@ -11,9 +12,13 @@ export class RecipeListComponent implements OnInit {
 
   recipeList: any[];
 
+  receiveEvent(newRecipeList) {
+    this.recipeList = newRecipeList;
+  }
+
   ngOnInit() {
     this.recipeService
-      .getRecipes()
+      .getRecipes("chicken", 1000)
       .subscribe(data => (this.recipeList = data.hits));
     // console.log(typeof this.recipeList);
   }

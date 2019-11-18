@@ -1,3 +1,9 @@
+<!-- DISPLAY SEARCH COMPONENT ABOVE RESULTS
+  don't forget to import in corresponding typescript file -->
+<app-search-criteria
+  (messageEvent)="receiveEvent($event)"
+></app-search-criteria>
+
 <article *ngFor="let recipe of recipeList">
   <h3>{{ recipe.recipe.label }}</h3>
   <ol>
