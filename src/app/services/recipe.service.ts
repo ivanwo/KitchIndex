@@ -11,7 +11,6 @@ const APP_KEY = "80c27908b4d2fcf3a330b4afcccdaf94";
 export class RecipeService {
   constructor(private http: HttpClient) {}
   recipeList: any[];
-  refreshList: boolean = false;
 
   getRecipes(topic: string, calories: number): Observable<any> {
     return this.http.get("https://api.edamam.com/search", {
@@ -19,6 +18,7 @@ export class RecipeService {
         app_id: APP_ID,
         app_key: APP_KEY,
         calories: `0-${calories}`,
+        to: "20",
         q: topic
       }
     });
