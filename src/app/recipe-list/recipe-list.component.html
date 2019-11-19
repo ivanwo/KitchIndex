@@ -4,27 +4,42 @@
   (messageEvent)="receiveEvent($event)"
 ></app-search-criteria>
 
-<section class="recipeHolder">
-  <article class="resultDisplayed" *ngFor="let recipe of recipeList">
-    <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-    <a href="{{ recipe.recipe.url }}"
-      >Click here for step by step recipe instructions.</a
-    >
-    <i
-      class="fas fa-heart clicked"
-      (click)="addFavs(recipe)"
-      [class.dark]="toggle"
-      (click)="toggleColor()"
-    ></i>
-    <h2 class="recipeSource"></h2>
-    <div>
-      <h3>{{ recipe.recipe.label }}</h3>
-      <ol>
-        <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
-          {{ ingredient }}
-        </li>
-      </ol>
+<article class="resultDisplayed" *ngFor="let recipe of recipeList; index as i">
+  <div>
+    <div class="hero-image">
+      <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
+      <a href="{{ recipe.recipe.url }}">
+        Click here for step by step recipe instructions.</a
+      >
+      <div class="hero-text">
+        <h3>{{ recipe.recipe.label }}</h3>
+      </div>
+
+      <!-- <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
+  <a href="{{ recipe.recipe.url }}"
+    >Click here for step by step recipe instructions.</a
+  > -->
+      <i
+        [ngClass]="{ favorite: recipe.isFav }"
+        class="fas fa-heart"
+        (click)="addFav(i)"
+        (click)="makeFav(recipe)"
+      ></i>
+      <h2 class="recipeSource"></h2>
     </div>
+<<<<<<< HEAD
   </article>
   <a (click)="moreResults()" class="moreResults">get more results</a>
 </section>
+=======
+  </div>
+  <div>
+    <!-- <h3>{{ recipe.recipe.label }}</h3>-->
+    <ol>
+      <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+        {{ ingredient }}
+      </li>
+    </ol>
+  </div>
+</article>
+>>>>>>> 4803bbdf3061925c4ebc470fc92074b1a7329001

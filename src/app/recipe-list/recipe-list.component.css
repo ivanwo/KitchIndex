@@ -8,17 +8,12 @@
 .foodImg {
   flex-grow: 2;
 }
-/* .heartIcon {
-  font-size: 20px;
-  color: red;
-} */
-
-.clicked {
-  color: red;
+.fas {
+  color: gray;
 }
 
-i {
-  color: blue;
+.favorite {
+  color: rgb(36, 101, 255);
 }
 .recipeHolder {
   display: flex;

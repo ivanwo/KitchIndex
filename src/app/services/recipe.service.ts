@@ -52,3 +52,4 @@ export class RecipeService {
     this.favList.push(favorite);
   }
 }
+// method to check if is favorite

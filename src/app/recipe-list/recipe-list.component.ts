@@ -11,23 +11,30 @@ export class RecipeListComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   ingredientLines: any[];
   recipeList: any[];
-  clickedHeart: boolean;
   favList: any[];
-  toggle = true;
+  favorite: boolean[];
 
   receiveEvent(newRecipeList) {
     this.recipeList = newRecipeList;
   }
 
-  toggleHeartIcon(): void {
-    this.clickedHeart = !this.clickedHeart;
-  }
+  // isFavorite(label: string): any {
+  //   this.favList = this.recipeService.getFavList();
+  //   for (let fav of this.favList) {
+  //     if (fav.label === label) return true;
+  //   }
+  //   return false;
+  // }
 
-  addFavs(favorite) {
-    this.recipeService.setFavList(favorite);
+  isFavorite: boolean = true;
+
+  addFav(index: number) {
+    //   this.recipeService.setFavList(this.favList);
+
+    this.recipeList[index].isFav = true;
   }
-  toggleColor(): void {
-    this.toggle = !this.toggle;
+  makeFav(favorite) {
+    this.recipeService.setFavList(favorite);
   }
   moreResults() {
     let lastSearch = this.recipeService.lastSearch;
