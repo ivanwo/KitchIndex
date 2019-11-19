@@ -60,7 +60,7 @@ export class RecipeListComponent implements OnInit {
       )
       .subscribe(data => (this.recipeList = data.hits));
     window.scroll({
-      top: 0,
+      top: 350,
       left: 0,
       behavior: "smooth"
     });

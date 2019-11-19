@@ -24,6 +24,9 @@ h1 {
 h1:hover {
   transform: scale(1.1);
 }
+h1:hover::after {
+  content: "!";
+}
 p {
   font-size: 2em;
   margin: 1em 1em 0 1em;

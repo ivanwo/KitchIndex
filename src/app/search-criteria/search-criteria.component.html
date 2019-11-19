@@ -39,29 +39,30 @@
       dietary restriction
     </button>
   </div>
+  <section class="hiddenOptions">
+    <label for="calories" [hidden]="caloriesHidden">
+      max calories
+      <input
+        [hidden]="caloriesHidden"
+        type="range"
+        min="100"
+        max="1000"
+        name="calories"
+        id="calories"
+        class="calories"
+        ngModel
+      />
+    </label>
 
-  <label for="dietary" [hidden]="dietaryRestrictionHidden">
-    <select name="dietary" id="dietary" ngModel>
-      <option value="">Dietary Restriction</option>
-      <option value="low-carb">low carb</option>
-      <!-- <option value="low-sodium">low sodium</option> -->
-      <option value="high-protein">high protein</option>
-      <option value="balanced">balanced</option>
-      <option value="low-fat">low fat</option>
-    </select>
-  </label>
-
-  <label for="calories" [hidden]="caloriesHidden">
-    max calories
-  </label>
-  <input
-    [hidden]="caloriesHidden"
-    type="range"
-    min="100"
-    max="1000"
-    name="calories"
-    id="calories"
-    class="calories"
-    ngModel
-  />
+    <label for="dietary" [hidden]="dietaryRestrictionHidden">
+      <select name="dietary" id="dietary" ngModel>
+        <option value="">Dietary Restriction</option>
+        <option value="low-carb">low carb</option>
+        <!-- <option value="low-sodium">low sodium</option> -->
+        <option value="high-protein">high protein</option>
+        <option value="balanced">balanced</option>
+        <option value="low-fat">low fat</option>
+      </select>
+    </label>
+  </section>
 </form>
