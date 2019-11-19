@@ -11,9 +11,31 @@ export class FavoritesPageComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   favList: any[];
   favRecipe: Recipe;
+  infoToggle: boolean = true;
+  showMore: boolean[] = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ];
+
+  info(index: number): void {
+    this.showMore[index] = !this.showMore[index];
+  }
 
   ngOnInit() {
     this.favList = this.recipeService.getFavList();
     console.log(this.favList);
+
+    // for (let i = 0; i < 10; i++) {
+    //   this.postShowing.push(false);
+    // }
+    // console.log(this.postShowing);
   }
 }
