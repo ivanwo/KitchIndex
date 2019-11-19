@@ -13,6 +13,7 @@ export class RecipeListComponent implements OnInit {
   recipeList: any[];
   clickedHeart: boolean;
   favList: any[];
+  toggle = true;
 
   receiveEvent(newRecipeList) {
     this.recipeList = newRecipeList;
@@ -26,7 +27,9 @@ export class RecipeListComponent implements OnInit {
 
     this.recipeService.setFavList(favorite);
   }
-
+  toggleColor(): void {
+    this.toggle = !this.toggle;
+  }
   ngOnInit() {
     //
     //

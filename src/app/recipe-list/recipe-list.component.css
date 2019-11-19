@@ -8,12 +8,16 @@
 .foodImg {
   flex-grow: 2;
 }
-.heartIcon {
+/* .heartIcon {
   font-size: 20px;
+  color: red;
+} */
+
+.clicked {
   color: red;
 }
 
-.blue {
+i {
   color: blue;
 }
 .recipeHolder{
