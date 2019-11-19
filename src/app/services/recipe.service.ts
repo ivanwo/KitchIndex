@@ -12,12 +12,14 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
   recipeList: any[];
   favList: any[] = [];
+  lastSearch: any[];
 
   getRecipes(
     topic: string,
     calories: number,
     dietary: string
   ): Observable<any> {
+    this.lastSearch=[topic,calories,dietary];
     if (dietary === "")
       return this.http.get("https://api.edamam.com/search", {
         params: {
