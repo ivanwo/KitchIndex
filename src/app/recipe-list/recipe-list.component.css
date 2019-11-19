@@ -16,3 +16,8 @@
 .blue {
   color: blue;
 }
+.recipeHolder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

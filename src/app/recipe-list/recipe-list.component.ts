@@ -23,16 +23,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   addFavs(favorite) {
-    //   title: string,
-    //   image: string,
-    //   // source: string,
 
-    //   ingredientLines: string[]
-    // ): any {
-    //   this.favList = this.recipeService.getFavList();
-    //   // console.log(typeof this.favList);
-    //   this.favList.push({ title, image, ingredientLines });
-    //   this.recipeService.setFavList(this.favList);
     this.recipeService.setFavList(favorite);
   }
 

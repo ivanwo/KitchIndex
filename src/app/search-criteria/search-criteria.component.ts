@@ -8,8 +8,8 @@ import { RecipeService } from "../services/recipe.service";
 })
 export class SearchCriteriaComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
-  dietaryRestrictionHidden: boolean = false;
-  caloriesHidden: boolean = false;
+  dietaryRestrictionHidden: boolean = true;
+  caloriesHidden: boolean = true;
 
   @Output() messageEvent = new EventEmitter<any>();
 

@@ -21,8 +21,23 @@
     <input name="submit" class="submit" type="submit" />
   </label>
   <div class="togglers">
-    <button (click)="toggleCalories()">calories</button>
-    <button (click)="toggleDietary()">dietary restriction</button>
+    <button
+      (click)="toggleCalories()"
+      class="caloriesButton"
+      [ngClass]="{ inactive: caloriesHidden, active: !caloriesHidden }"
+    >
+      calories
+    </button>
+    <button
+      (click)="toggleDietary()"
+      class="dietaryButton"
+      [ngClass]="{
+        inactive: dietaryRestrictionHidden,
+        active: !dietaryRestrictionHidden
+      }"
+    >
+      dietary restriction
+    </button>
   </div>
 
   <label for="dietary" [hidden]="dietaryRestrictionHidden">

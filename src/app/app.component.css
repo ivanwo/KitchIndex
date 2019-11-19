@@ -1,0 +1,26 @@
+header {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Kaeng_pla_thu_and_tom_mara.jpg");
+  background-position-y: 53%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+h1 {
+  margin: 0;
+  padding-top: 7.5vh;
+  padding-left: 0.5em;
+  text-shadow: 2px 2px 2px rgb(36, 101, 255);
+  font-size: 3em;
+}
+p {
+  font-size: 2em;
+  margin-top: 2em;
+  text-shadow: 2px 2px 2px rgb(36, 101, 255);
+}
