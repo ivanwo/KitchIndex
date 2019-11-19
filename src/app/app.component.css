@@ -6,6 +6,7 @@ header {
   height: 50vh;
   font-family: sans-serif;
   text-align: center;
+  overflow: hidden;
   color: white;
   margin-top: 0;
   display: flex;
@@ -21,6 +22,18 @@ h1 {
 }
 p {
   font-size: 2em;
-  margin: 3.5em 1em 0 1em;
+  margin: 1em 1em 0 1em;
   text-shadow: 2px 2px 2px rgb(36, 101, 255);
+}
+nav {
+  background-color: rgb(36, 101, 255);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10vw;
+  overflow: hidden;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.25em;
 }

@@ -12,7 +12,11 @@
         (click)="addFav(i)"
         (click)="makeFav(recipe)"
       ></i>
-      <a class="showMore" (click)="toggleDetails(i)"></a>
+      <a
+        class="showMore"
+        (click)="toggleDetails(i)"
+        [ngClass]="{ active: detailsHidden[i], inactive: !detailsHidden[i] }"
+      ></a>
       <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
       <h3 class="recipeTitle">{{ recipe.recipe.label }}</h3>
     </div>
@@ -23,6 +27,7 @@
       >
       <!-- <h3>{{ recipe.recipe.label }}</h3>-->
       <ol>
+        <span class="titelo">Ingredients List</span>
         <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
           {{ ingredient }}
         </li>
