@@ -17,16 +17,18 @@ export class RecipeService {
   getRecipes(
     topic: string,
     calories: number,
-    dietary: string
+    dietary: string,
+    to: number
   ): Observable<any> {
-    this.lastSearch=[topic,calories,dietary];
+    this.lastSearch = [topic, calories, dietary, to];
     if (dietary === "")
       return this.http.get("https://api.edamam.com/search", {
         params: {
           app_id: APP_ID,
           app_key: APP_KEY,
           calories: `0-${calories}`,
-          to: "10",
+          from: `${to - 10}`,
+          to: `${to}`,
           q: topic
         }
       });
@@ -36,7 +38,8 @@ export class RecipeService {
           app_id: APP_ID,
           app_key: APP_KEY,
           calories: `0-${calories}`,
-          to: "10",
+          to: `${to}`,
+          from: `${to - 10}`,
           diet: dietary,
           q: topic
         }

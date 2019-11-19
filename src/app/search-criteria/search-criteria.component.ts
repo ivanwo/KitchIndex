@@ -19,9 +19,11 @@ export class SearchCriteriaComponent implements OnInit {
     if (this.caloriesHidden) calories = 10000;
     // wha
     if (dietary === undefined) dietary = "";
-    this.recipeService.getRecipes(topic, calories, dietary).subscribe(data => {
-      this.messageEvent.emit(data.hits);
-    });
+    this.recipeService
+      .getRecipes(topic, calories, dietary, 10)
+      .subscribe(data => {
+        this.messageEvent.emit(data.hits);
+      });
   }
   toggleCalories() {
     this.caloriesHidden = !this.caloriesHidden;

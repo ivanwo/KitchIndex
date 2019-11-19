@@ -24,18 +24,34 @@ export class RecipeListComponent implements OnInit {
   }
 
   addFavs(favorite) {
-
     this.recipeService.setFavList(favorite);
   }
   toggleColor(): void {
     this.toggle = !this.toggle;
   }
+  moreResults() {
+    let lastSearch = this.recipeService.lastSearch;
+    this.recipeService
+      .getRecipes(
+        lastSearch[0],
+        lastSearch[1],
+        lastSearch[2],
+        lastSearch[3] + 10
+      )
+      .subscribe(data => (this.recipeList = data.hits));
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
   ngOnInit() {
     //
     //
     this.recipeService
-      .getRecipes("chicken", 1000, "")
+      .getRecipes("chicken", 1000, "", 10)
       .subscribe(data => (this.recipeList = data.hits));
+
     // console.log(typeof this.recipeList);
   }
 }
