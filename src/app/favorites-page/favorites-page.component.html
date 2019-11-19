@@ -4,8 +4,13 @@
     >Click here for step by step recipe instructions.</a
   >
   <div>
-    <h3>{{ recipe.recipe.label }}</h3>
-    <!-- <p>{{ recipe.source }}</p> -->
+    <div class="hero-image">
+      <div class="hero-text">
+        <h3>{{ recipe.recipe.label }}</h3>
+      </div>
+    </div>
+
+    <!-- <p>{{ recipe.recipe.source }}</p> -->
 
     <ol>
       <li *ngFor="let ingredient of recipe.recipe.ingredientLines">

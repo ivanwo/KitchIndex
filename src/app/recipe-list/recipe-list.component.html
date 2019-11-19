@@ -9,7 +9,12 @@
   <a href="{{ recipe.recipe.url }}"
     >Click here for step by step recipe instructions.</a
   >
-  <i class="fas fa-heart blue" (click)="addFavs(recipe)"></i>
+  <i
+    class="fas fa-heart clicked"
+    (click)="addFavs(recipe)"
+    [class.dark]="toggle"
+    (click)="toggleColor()"
+  ></i>
   <h2 class="recipeSource"></h2>
   <div>
     <h3>{{ recipe.recipe.label }}</h3>
