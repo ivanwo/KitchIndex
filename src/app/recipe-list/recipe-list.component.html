@@ -18,10 +18,9 @@
     </div>
 
     <div [hidden]="detailsHidden[i]" class="details">
-      <a href="{{ recipe.recipe.url }}">
-        Click here for step by step recipe instructions.</a
+      <a href="{{ recipe.recipe.url }}" class="recipeSource">
+        step by step recipe instructions.</a
       >
-      <h2 class="recipeSource"></h2>
       <!-- <h3>{{ recipe.recipe.label }}</h3>-->
       <ol>
         <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
