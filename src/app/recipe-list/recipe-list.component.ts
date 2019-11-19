@@ -13,24 +13,25 @@ export class RecipeListComponent implements OnInit {
   recipeList: any[];
   favList: any[];
   favorite: boolean[];
+  isFavorite: boolean = true;
+  detailsHidden: boolean[] = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ];
 
   receiveEvent(newRecipeList) {
     this.recipeList = newRecipeList;
   }
 
-  // isFavorite(label: string): any {
-  //   this.favList = this.recipeService.getFavList();
-  //   for (let fav of this.favList) {
-  //     if (fav.label === label) return true;
-  //   }
-  //   return false;
-  // }
-
-  isFavorite: boolean = true;
-
   addFav(index: number) {
-    //   this.recipeService.setFavList(this.favList);
-
     this.recipeList[index].isFav = true;
   }
   makeFav(favorite) {
@@ -52,13 +53,15 @@ export class RecipeListComponent implements OnInit {
       behavior: "smooth"
     });
   }
+  detailCheck(i: number): boolean {
+    return this.detailsHidden[i];
+  }
+  toggleDetails(i: number): void {
+    this.detailsHidden[i] = !this.detailsHidden[i];
+  }
   ngOnInit() {
-    //
-    //
     this.recipeService
       .getRecipes("chicken", 1000, "", 10)
       .subscribe(data => (this.recipeList = data.hits));
-
-    // console.log(typeof this.recipeList);
   }
 }

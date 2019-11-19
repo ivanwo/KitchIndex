@@ -4,34 +4,23 @@
   (messageEvent)="receiveEvent($event)"
 ></app-search-criteria>
 <section class="recipeHolder">
-  <article
-    class="resultDisplayed"
-    *ngFor="let recipe of recipeList; index as i"
-  >
-    <div>
-      <div class="hero-image">
-        <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-        <a href="{{ recipe.recipe.url }}">
-          Click here for step by step recipe instructions.</a
-        >
-        <div class="hero-text">
-          <h3>{{ recipe.recipe.label }}</h3>
-        </div>
-
-        <!-- <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-  <a href="{{ recipe.recipe.url }}"
-    >Click here for step by step recipe instructions.</a
-  > -->
-        <i
-          [ngClass]="{ favorite: recipe.isFav }"
-          class="fas fa-heart"
-          (click)="addFav(i)"
-          (click)="makeFav(recipe)"
-        ></i>
-        <h2 class="recipeSource"></h2>
-      </div>
+  <article class="recipeArticle" *ngFor="let recipe of recipeList; index as i">
+    <div class="visible">
+      <i
+        [ngClass]="{ favorite: recipe.isFav }"
+        class="fas fa-heart"
+        (click)="addFav(i)"
+        (click)="makeFav(recipe)"
+      ></i>
+      <a class="showMore" (click)="toggleDetails(i)"></a>
+      <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
+      <h3 class="recipeTitle">{{ recipe.recipe.label }}</h3>
     </div>
-    <div>
+    <div [hidden]="detailCheck(i)">
+      <a href="{{ recipe.recipe.url }}">
+        Click here for step by step recipe instructions.</a
+      >
+      <h2 class="recipeSource"></h2>
       <!-- <h3>{{ recipe.recipe.label }}</h3>-->
       <ol>
         <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
