@@ -1,4 +1,4 @@
-<article *ngFor="let recipe of favList;index as i">
+<article [ngClass]="{delete:gone}" *ngFor="let recipe of favList;index as i">
     <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
     <a href="{{ recipe.recipe.url }}">Click here for step by step recipe instructions.</a
   >
@@ -17,6 +17,6 @@
       </li>
     </ol>
     <button (click)="info(i)">More Info</button>
-
+    <button class="delete" (click)="deleteMe(i)">delete</button>
   </div>
 </article>
