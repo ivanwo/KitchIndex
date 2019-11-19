@@ -16,7 +16,8 @@
       <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
       <h3 class="recipeTitle">{{ recipe.recipe.label }}</h3>
     </div>
-    <div [hidden]="detailCheck(i)">
+
+    <div [hidden]="detailsHidden[i]" class="details">
       <a href="{{ recipe.recipe.url }}">
         Click here for step by step recipe instructions.</a
       >

@@ -1,5 +1,7 @@
 .recipeArticle {
-  width: 50vw;
+  /* width: 50vw; */
+  max-width: 450px;
+
   /* max-width: 75vw; */
   height: auto;
 }
@@ -8,8 +10,8 @@
   border: 2px solid blue;
 }
 .foodImg {
-  width: 50vw;
-
+  /* width: 50vw; */
+  max-width: 450px;
   display: block;
   box-shadow: inset 3px 3px 5px 6px white;
   /* flex-grow: 2; */
@@ -20,7 +22,7 @@
   margin-left: 0.5em;
 }
 .showMore {
-  transform: translateY(50vw);
+  transform: translateY(300px);
   transition: 0.5s;
   float: right;
 }
@@ -33,7 +35,7 @@
   font-size: 3em;
 }
 .showMore:hover {
-  transform: translateY(50vw) scale(1.5);
+  transform: translateY(300px) scale(1.5);
 }
 
 .fas {

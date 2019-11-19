@@ -39,6 +39,18 @@ export class RecipeListComponent implements OnInit {
   }
   moreResults() {
     let lastSearch = this.recipeService.lastSearch;
+    this.detailsHidden = [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ];
     this.recipeService
       .getRecipes(
         lastSearch[0],
@@ -52,9 +64,6 @@ export class RecipeListComponent implements OnInit {
       left: 0,
       behavior: "smooth"
     });
-  }
-  detailCheck(i: number): boolean {
-    return this.detailsHidden[i];
   }
   toggleDetails(i: number): void {
     this.detailsHidden[i] = !this.detailsHidden[i];
