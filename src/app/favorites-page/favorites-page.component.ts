@@ -24,9 +24,14 @@ export class FavoritesPageComponent implements OnInit {
     true,
     true
   ];
+  gone: boolean = true;
 
   info(index: number): void {
     this.showMore[index] = !this.showMore[index];
+  }
+
+  deleteMe(index: number): void {
+    this.favList.splice(index, 1);
   }
 
   ngOnInit() {
