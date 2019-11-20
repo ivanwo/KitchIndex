@@ -31,11 +31,9 @@
   float: right;
 }
 .titelo {
-  border: 1px solid rgba(36, 101, 255, 0.25);
-  background-color: rgba(36, 101, 255, 0.25);
-  padding: 0.1em;
-  margin: 0.1em 0;
-  border-radius: 5px;
+  font-size: 1.2em;
+  margin: 0;
+  padding-left: 1em;
 }
 .details {
   /* transform: translateY(1.5em);
@@ -66,7 +64,10 @@
 .fas {
   cursor: pointer;
   margin: 0;
-  color: gray;
+  color: rgba(36, 101, 255, 0.4);
+
+  text-shadow: 0 0 3px #fff;
+
   transform: translateY(-300px);
   transition: 0.5s;
   font-size: 3em;
@@ -91,6 +92,7 @@ li {
 .recipeSource {
   max-width: 400px;
   /* margin-top: 10em; */
+  padding-left: 1em;
   text-decoration: none;
   color: rgb(36, 101, 255);
   text-align: center;

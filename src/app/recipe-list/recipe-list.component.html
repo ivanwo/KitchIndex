@@ -29,8 +29,8 @@
         <a href="{{ recipe.recipe.url }}" class="recipeSource">
           step by step recipe instructions.
         </a>
+        <p class="titelo">Ingredients List</p>
         <ol>
-          <span class="titelo">Ingredients List</span>
           <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
             {{ ingredient }}
           </li>
