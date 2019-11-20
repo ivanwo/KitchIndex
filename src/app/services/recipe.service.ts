@@ -45,6 +45,15 @@ export class RecipeService {
         }
       });
   }
+
+  isFavorite(label: string): boolean {
+    for (let favorite of this.favList)
+      if (favorite.label === label) {
+        return true;
+      }
+    return false;
+  }
+
   getFavList(): any[] {
     return this.favList;
   }
