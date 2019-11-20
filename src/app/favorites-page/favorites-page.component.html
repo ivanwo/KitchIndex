@@ -1,26 +1,32 @@
-<article
-  [ngClass]="{ delete: gone }"
-  *ngFor="let recipe of favList; index as i"
->
-  <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-  <a href="{{ recipe.recipe.url }}"
-    >Click here for step by step recipe instructions.</a
+<section class="recipeHolder">
+  <article
+    class="recipeArticle"
+    [ngClass]="{ delete: gone }"
+    *ngFor="let recipe of favList; index as i"
   >
-  <div>
-    <div class="hero-image">
-      <div class="hero-text">
-        <h3>{{ recipe.recipe.label }}</h3>
+    <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
+    <div>
+      <h3>{{ recipe.recipe.label }}</h3>
+
+      <!-- <p>{{ recipe.recipe.source }}</p> -->
+      <div class="buttonHolder">
+        <button (click)="info(i)">More Info</button>
+        <button class="delete" (click)="deleteMe(i)">delete</button>
+      </div>
+      <div [hidden]="showMore[i]">
+        <span class="linkHolder">
+          <a href="{{ recipe.recipe.url }}"
+            >step by step recipe instructions.</a
+          >
+        </span>
+        <ol>
+          <li
+            *ngFor="let ingredient of recipe.recipe.ingredientLines; index as i"
+          >
+            {{ ingredient }}
+          </li>
+        </ol>
       </div>
     </div>
-
-    <!-- <p>{{ recipe.recipe.source }}</p> -->
-
-    <ol [hidden]="showMore[i]">
-      <li *ngFor="let ingredient of recipe.recipe.ingredientLines; index as i">
-        {{ ingredient }}
-      </li>
-    </ol>
-    <button (click)="info(i)">More Info</button>
-    <button class="delete" (click)="deleteMe(i)">delete</button>
-  </div>
-</article>
+  </article>
+</section>

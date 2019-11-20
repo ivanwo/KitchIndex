@@ -6,20 +6,16 @@
   /* height: auto; */
 }
 .visible {
-  margin-top: -25px;
-  z-index: 2;
+  /* margin-top: -20px; */
+  z-index: 0;
   opacity: 10;
-  /* padding-top: -50px; */
-  /* border: 2px solid blue; */
 }
 .foodImg {
-  /* width: 50vw; */
   max-width: 450px;
   border-radius: 5px;
   border: 2px solid grey;
   display: block;
   box-shadow: inset 3px 3px 5px 6px white;
-  /* flex-grow: 2; */
 }
 .recipeTitle {
   margin-top: -2.5em;
@@ -27,7 +23,6 @@
   text-shadow: 1px 1px 2px white;
   margin-left: 0.5em;
   margin-bottom: 0;
-  /* background-color: WHITE; */
 }
 .showMore {
   transform: translateY(300px);

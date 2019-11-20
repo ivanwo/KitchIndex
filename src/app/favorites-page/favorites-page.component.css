@@ -1,3 +1,63 @@
-.infotoggle {
-    display: none;
+.recipeArticle {
+  max-width: 450px;
+  font-family: sans-serif;
+  margin: 1em;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+.recipeHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* overflow: hidden; */
+}
+ol,
+li {
+  max-width: 250px;
+  list-style: disc;
+}
+h3 {
+  margin: 0;
+  text-align: center;
+}
+button {
+  background-color: rgb(36, 101, 255);
+  opacity: 0.7;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  transition: 0.5s;
+  font-size: 1.25em;
+}
+button:hover {
+  opacity: 1;
+}
+.buttonHolder {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.linkHolder {
+  margin: 0 auto;
+  text-align: center;
+}
+a {
+  color: rgb(36, 101, 255);
+}
+.foodImg {
+  max-width: 450px;
+  border-radius: 5px;
+  border-bottom: 2px solid grey;
+  display: block;
+  box-shadow: inset 3px 3px 5px 6px white;
+}
+@media screen and (min-width: 500px) {
+  .recipeHolder {
+    max-width: 75vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
