@@ -9,7 +9,7 @@ header {
   overflow: hidden;
   color: white;
   margin-top: 0;
-  width: 101vw;
+  /* width: 101vw; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -43,7 +43,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   /* padding: 0 10vw; */
-  width: 101vw;
+  /* width: 101vw; */
   overflow: hidden;
   height: 30px;
   align-items: center;
