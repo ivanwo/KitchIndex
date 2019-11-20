@@ -25,13 +25,17 @@
         <h3 class="recipeTitle">{{ recipe.recipe.label }}</h3>
       </div>
 
-      <div [hidden]="detailsHidden[i]" class="details">
+      <div class="details" [hidden]="detailsHidden[i]">
         <div class="holdover">
-          <a href="{{ recipe.recipe.url }}" target="_blank" class="recipeSource">
+          <a
+            href="{{ recipe.recipe.url }}"
+            target="_blank"
+            class="recipeSource"
+          >
             step by step recipe instructions.
           </a>
         </div>
-        <p class="titelo">Ingredients List</p>
+        <p class="titelo">Ingredients</p>
         <ol>
           <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
             {{ ingredient }}
