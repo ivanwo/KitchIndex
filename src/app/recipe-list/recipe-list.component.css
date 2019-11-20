@@ -2,18 +2,19 @@
   /* width: 50vw; */
   max-width: 450px;
   font-family: sans-serif;
+  border: 2px solid grey;
+  border-radius: 10px;
   /* max-width: 75vw; */
   /* height: auto; */
 }
 .visible {
-  /* margin-top: -20px; */
   z-index: 0;
   opacity: 10;
 }
 .foodImg {
   max-width: 450px;
   border-radius: 5px;
-  border: 2px solid grey;
+  border-bottom: 2px solid grey;
   display: block;
   box-shadow: inset 3px 3px 5px 6px white;
 }
@@ -25,7 +26,7 @@
   margin-bottom: 0;
 }
 .showMore {
-  transform: translateY(300px);
+  /* transform: translateY(300px); */
   transition: 0.5s;
   float: right;
 }
@@ -37,13 +38,13 @@
   border-radius: 5px;
 }
 .details {
-  transform: translateY(1.5em);
+  /* transform: translateY(1.5em);
   background-color: rgba(36, 101, 255, 0.25);
   border: 1px solid grey;
   padding-top: 0.5em;
   z-index: 0;
   border-radius: 5px;
-  margin: 0;
+  margin: 0; */
 }
 .showMore::before {
   /* float: right; */
@@ -59,19 +60,19 @@
   content: "▲";
 }
 .showMore:hover {
-  transform: translateY(300px) scale(1.5);
+  transform: scale(1.2);
 }
 
 .fas {
   cursor: pointer;
   margin: 0;
   color: gray;
-  transform: translateY(1.2em);
+  transform: translateY(-300px);
   transition: 0.5s;
   font-size: 3em;
 }
 .fas:hover {
-  transform: translateY(1.2em) scale(1.2);
+  transform: translateY(-300px) scale(1.2);
 }
 .favorite {
   color: rgb(36, 101, 255);
@@ -84,13 +85,14 @@
 }
 ol,
 li {
-  max-width: 200px;
+  max-width: 250px;
+  list-style: disc;
 }
 .recipeSource {
   max-width: 400px;
   /* margin-top: 10em; */
   text-decoration: none;
-  color: white;
+  color: rgb(36, 101, 255);
   text-align: center;
 }
 .moreResults {

@@ -10,6 +10,7 @@
       *ngFor="let recipe of recipeList; index as i"
     >
       <div class="visible">
+        <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
         <i
           [ngClass]="{ favorite: recipe.isFav }"
           class="fas fa-heart"
@@ -21,15 +22,13 @@
           (click)="toggleDetails(i)"
           [ngClass]="{ active: detailsHidden[i], inactive: !detailsHidden[i] }"
         ></a>
-        <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
         <h3 class="recipeTitle">{{ recipe.recipe.label }}</h3>
       </div>
 
       <div [hidden]="detailsHidden[i]" class="details">
         <a href="{{ recipe.recipe.url }}" class="recipeSource">
-          step by step recipe instructions.</a
-        >
-        <!-- <h3>{{ recipe.recipe.label }}</h3>-->
+          step by step recipe instructions.
+        </a>
         <ol>
           <span class="titelo">Ingredients List</span>
           <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
