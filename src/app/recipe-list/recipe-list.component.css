@@ -20,6 +20,7 @@
   margin-top: -2.5em;
   max-width: 300px;
   text-shadow: 1px 1px 2px white;
+  margin-left: 0.5em;
   margin-bottom: 0;
 }
 .showMore {
@@ -29,12 +30,16 @@
 .titelo {
   font-size: 1.2em;
   margin: 0;
-  padding-bottom: 0;
-}
-.recipeTitle,
-.recipeSource,
-.titelo {
   padding-left: 1em;
+}
+.details {
+  /* transform: translateY(1.5em);
+  background-color: rgba(36, 101, 255, 0.25);
+  border: 1px solid grey;
+  padding-top: 0.5em;
+  z-index: 0;
+  border-radius: 5px;
+  margin: 0; */
 }
 .showMore::before {
   cursor: pointer;
@@ -55,7 +60,9 @@
 .fas {
   margin: 0;
   color: rgba(36, 101, 255, 0.4);
+
   text-shadow: 0 0 3px #fff;
+
   transform: translateY(-300px);
   transition: 0.5s;
   font-size: 3em;
@@ -76,14 +83,10 @@ li {
   max-width: 250px;
   list-style: disc;
 }
-ol {
-  padding: 0 auto;
-  border-top: 1px solid lightgray;
-  margin: 0 auto;
-}
 .recipeSource {
   max-width: 400px;
-  margin-left: 0.2em;
+  /* margin-top: 10em; */
+  padding-left: 1em;
   text-decoration: none;
   color: rgb(36, 101, 255);
   margin-top: 1em;
