@@ -17,8 +17,15 @@ h1 {
   margin: 0;
   padding-top: 7.5vh;
   padding-left: 0.5em;
+  transition: 0.5s;
   text-shadow: 2px 2px 2px rgb(36, 101, 255);
   font-size: 3em;
+}
+h1:hover {
+  transform: scale(1.1);
+}
+h1:hover::after {
+  content: "!";
 }
 p {
   font-size: 2em;

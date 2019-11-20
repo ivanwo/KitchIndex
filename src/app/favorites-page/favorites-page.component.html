@@ -1,6 +1,10 @@
-<article *ngFor="let recipe of favList;index as i">
-    <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
-    <a href="{{ recipe.recipe.url }}">Click here for step by step recipe instructions.</a
+<article
+  [ngClass]="{ delete: gone }"
+  *ngFor="let recipe of favList; index as i"
+>
+  <img class="foodImg" src="{{ recipe.recipe.image }}" alt="" />
+  <a href="{{ recipe.recipe.url }}"
+    >Click here for step by step recipe instructions.</a
   >
   <div>
     <div class="hero-image">
@@ -12,11 +16,11 @@
     <!-- <p>{{ recipe.recipe.source }}</p> -->
 
     <ol [hidden]="showMore[i]">
-      <li *ngFor="let ingredient of recipe.recipe.ingredientLines;index as i">
+      <li *ngFor="let ingredient of recipe.recipe.ingredientLines; index as i">
         {{ ingredient }}
       </li>
     </ol>
     <button (click)="info(i)">More Info</button>
-
+    <button class="delete" (click)="deleteMe(i)">delete</button>
   </div>
 </article>
