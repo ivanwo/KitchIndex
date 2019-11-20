@@ -31,6 +31,8 @@ nav {
   justify-content: space-evenly;
   padding: 0 10vw;
   overflow: hidden;
+  height: 30px;
+  align-items: center;
 }
 nav a {
   text-decoration: none;
