@@ -32,12 +32,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   addFav(index: number) {
-    this.favList = this.recipeService.getFavList();
-    if (this.recipeService.isFavorite(this.recipeList[index].recipe.label)) {
-      this.recipeList[index].isFav = true;
-    } else {
-      this.favList.splice(index, 1);
-    }
+    this.recipeList[index].isFav = true;
   }
 
   makeFav(favorite) {

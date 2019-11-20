@@ -27,11 +27,16 @@
   transition: 0.5s;
   float: right;
 }
+.holdover {
+  padding-left: 0.5em;
+}
 .titelo {
-  border: 1px solid rgba(36, 101, 255, 0.25);
-  background-color: rgba(36, 101, 255, 0.25);
-  padding: 0.1em;
-  margin: 0.1em 0;
+  /* border: 1px solid rgba(36, 101, 255, 0.25); */
+  /* background-color: rgba(36, 101, 255, 0.25); */
+  border-bottom: 2px solid lightgray;
+  /* padding: 0.1em; */
+  margin: 0.2em 0;
+  padding-left: 0.75em;
   border-radius: 5px;
 }
 .details {
@@ -61,6 +66,7 @@
 
 .fas {
   margin: 0;
+  cursor: pointer;
   color: rgba(36, 101, 255, 0.4);
   text-shadow: 0 0 3px #fff;
   transform: translateY(-300px);
@@ -89,8 +95,8 @@ li {
   text-decoration: none;
   color: rgb(36, 101, 255);
   margin-top: 1em;
+  margin-left: 0.25em;
   text-decoration: none;
-  color: #555f61;
   text-align: center;
 }
 .moreResults {
