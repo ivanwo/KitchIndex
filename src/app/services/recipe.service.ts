@@ -47,10 +47,12 @@ export class RecipeService {
   }
 
   isFavorite(label: string): boolean {
-    for (let favorite of this.favList)
-      if (favorite.label === label) {
+    for (let favorite of this.favList) {
+      // alert(favorite.recipe.label);
+      if (favorite.recipe.label === label) {
         return true;
       }
+    }
     return false;
   }
 
@@ -59,6 +61,20 @@ export class RecipeService {
   }
   setFavList(favorite): any {
     this.favList.push(favorite);
+  }
+  removeFav(label: string): void {
+    let removing: number;
+    for (let i = 0; i < this.favList.length; i++) {
+      if (this.favList[i].recipe.label === label) {
+        // this.favList.splice(i, 1);
+        removing = i;
+        // return;
+      }
+    }
+    if (removing >= 0) {
+      this.favList.splice(removing, 1);
+      // alert(this.favList.length);
+    }
   }
 }
 // method to check if is favorite

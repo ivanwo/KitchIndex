@@ -33,9 +33,13 @@ export class RecipeListComponent implements OnInit {
 
   addFav(index: number) {
     this.favList = this.recipeService.getFavList();
-    if (this.recipeService.isFavorite(this.recipeList[index].recipe.label)) {
+    if (!this.recipeService.isFavorite(this.recipeList[index].recipe.label)) {
+      //   alert("not a fav yet");
       this.recipeList[index].isFav = true;
-    } else this.favList.splice(index, 1);
+    } else {
+      this.recipeList[index].isFav = false;
+      this.favList.splice(index, 1);
+    }
   }
 
   makeFav(favorite) {
@@ -76,5 +80,6 @@ export class RecipeListComponent implements OnInit {
     this.recipeService
       .getRecipes("chicken", 1000, "", 10)
       .subscribe(data => (this.recipeList = data.hits));
+    this.favList = this.recipeService.getFavList();
   }
 }
