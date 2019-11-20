@@ -1,54 +1,61 @@
 header {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Kaeng_pla_thu_and_tom_mara.jpg");
-  background-position-y: 53%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
-  font-family: sans-serif;
-  text-align: center;
-  overflow: hidden;
-  color: white;
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/51/Kaeng_pla_thu_and_tom_mara.jpg");
+    background-position-y: 53%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    font-family: sans-serif;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+
 h1 {
-  margin: 0;
-  padding-top: 7.5vh;
-  padding-left: 0.5em;
-  transition: 0.5s;
-  text-shadow: 2px 2px 2px rgb(36, 101, 255);
-  font-size: 3em;
+    margin: 0;
+    padding-top: 7.5vh;
+    padding-left: 0.5em;
+    transition: 0.5s;
+    text-shadow: 2px 2px 2px rgb(36, 101, 255);
+    font-size: 3em;
 }
+
 h1:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
+
 h1:hover::after {
-  content: "!";
+    content: "!";
 }
+
 p {
-  font-size: 2em;
-  margin: 1em 1em 0 1em;
-  text-shadow: 2px 2px 2px rgb(36, 101, 255);
+    font-size: 2em;
+    margin: 1em 1em 0 1em;
+    text-shadow: 2px 2px 2px rgb(36, 101, 255);
 }
+
 nav {
-  background-color: rgb(36, 101, 255);
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0 10vw;
-  overflow: hidden;
-  height: 30px;
-  align-items: center;
+    background-color: rgb(36, 101, 255);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10vw;
+    overflow: hidden;
+    height: 30px;
+    align-items: center;
 }
+
 nav a {
-  text-decoration: none;
-  font-weight: bolder;
-  font-family: sans-serif;
-  color: white;
-  font-size: 1.25em;
-  transition: 0.5s;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.25em;
+    transition: 0.5s;
 }
+
 nav a:hover {
-  transform: scale(1.25);
+    transform: scale(1.25);
 }
